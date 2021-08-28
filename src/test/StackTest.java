@@ -45,6 +45,7 @@ public class StackTest {
 		ds.push(1);
 		ds.push(1);
 		ds.empty();
+		ds.show();
 
 	}
 

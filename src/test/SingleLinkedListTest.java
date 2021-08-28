@@ -2,11 +2,11 @@ package test;
 
 import jada.*;
 
-public class LinkedListTest {
+public class SingleLinkedListTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			LinkedList ds = new LinkedList();
+			SingleLinkedList ds = new SingleLinkedList();
 			ds.show();
 			ds.insert(ds.target_node(ds.head,0), 1);
 			ds.insert(ds.target_node(ds.head,0), 2);
@@ -18,8 +18,11 @@ public class LinkedListTest {
 			ds.insert(ds.head, 6);
 			ds.remove(ds.head);
 			ds.insert(ds.head, 8);
+			ds.show();
 			ds.insert(ds.target_node(ds.head, 2), "hello");
+			ds.show();
 			ds.remove(ds.target_node(ds.head, 3));
+			ds.remove(ds.tail);
 			ds.show();
 		
 	}

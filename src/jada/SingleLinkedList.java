@@ -9,29 +9,15 @@ package jada;
  * 
  */
 
-class Node{
-	
-	public Object data;
-	public Node next;
-	
-	public Node() {
-		this.data = null;
-		this.next = null;
-	};
-	
-	public Node(Object data) {
-		this.data = data;
-		this.next = null;
-	};
-	
-}
+import jada.*;
 
-public class LinkedList {
+public class SingleLinkedList {
+	
 	
 	public Node head;
 	public Node tail;
 	
-	public LinkedList() {
+	public SingleLinkedList() {
 		super();
 		head = new Node();
 	}
@@ -47,7 +33,6 @@ public class LinkedList {
 				node.next = tmp_node;	
 			}
 			
-			tail = tmp_node;
 			set_tail();
 			return;
 		}
@@ -55,9 +40,10 @@ public class LinkedList {
 		Node tmp_node = pre_node.next;
 		pre_node.next = node;
 		node.next = tmp_node;
+		tmp_node = null;
 		set_tail();
 	}
-	
+	//ERROR
 	public void remove(Node pre_node) {
 		
 		if(pre_node.data == null) { //head has null data
@@ -66,15 +52,16 @@ public class LinkedList {
 		}
 		
 		Node tmp_node = pre_node.next;
+		Node node = before_remove(pre_node);
 		
 		if(tmp_node == null) {
-			Node node = set_tail();
 			node.next = null;
+			tmp_node = null;
 			set_tail();
 			return;
 		}
 		
-		pre_node.next = tmp_node.next;
+		node.next = tmp_node;
 		tmp_node = null;
 		set_tail();
 		return;
@@ -88,6 +75,17 @@ public class LinkedList {
 			node = tmp_node;
 		}
 		return node;
+	}
+	
+	private Node before_remove(Node pre_node) {
+		Node node = head.next;
+		Node tmp_node = node;
+		while(node!=pre_node){
+			tmp_node = node;
+			node = tmp_node.next;	
+		}
+		node = null;
+		return tmp_node;
 	}
 	
 	public void show() {

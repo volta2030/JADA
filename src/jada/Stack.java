@@ -68,4 +68,18 @@ public class Stack {
 		System.out.println(space[top]);
 	}
 	
+	public void show() {
+		int idx = top;
+		System.out.println("=====");
+		while(idx >= 0) {
+			if(idx == top) {
+				System.out.println(space[idx] +" <-top");
+			}
+			System.out.println(space[idx]);
+			idx--;
+		}
+		System.out.println("=====");
+		return;
+	}
+	
 }
