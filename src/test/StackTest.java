@@ -5,8 +5,6 @@ package test;
  * Makes World Better with Engineering - volta2030(GT40)
  * Recent Update : 2021-08-28 
  * 
- * 
- * 
  */
 
 import jada.*;
