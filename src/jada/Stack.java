@@ -30,7 +30,7 @@ public class Stack {
 		space = new Object[this.size];
 	}
 	
-	public void push(Object obj) {
+	public void push(Object data) {
 		
 		top++;
 		if(size == top) {
@@ -41,7 +41,7 @@ public class Stack {
 			}
 		}
 			
-		space[top] = obj;
+		space[top] = data;
 	}
 	
 	public void pop() {
