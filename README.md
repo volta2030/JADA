@@ -10,3 +10,4 @@ This library was created to study & utilize of Data Structures
 ## 2. What data structures & algorithms does JADA support?
 
 - Stack
+- Linked List
