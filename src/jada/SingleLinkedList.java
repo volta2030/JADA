@@ -1,10 +1,10 @@
 package jada;
 /**
- * LINKED LIST
+ * SINGLY LINKED LIST
  * 
  * JADA : JAVA Data structure & Algorithm
  * Makes World Better with Engineering - volta2030(GT40)
- * Recent Update : 2021-08-28 
+ * Recent Update : 2021-08-29
  * 
  * 
  */
@@ -46,7 +46,11 @@ public class SingleLinkedList {
 	//ERROR
 	public void remove(Node pre_node) {
 		
-		if(pre_node.data == null) { //head has null data
+		if(empty()) { //head has null data
+			return;
+		}
+		
+		if(pre_node.data == null) { 
 			System.out.println("Couldn't remove head");
 			return;
 		}
@@ -78,7 +82,7 @@ public class SingleLinkedList {
 	}
 	
 	private Node before_remove(Node pre_node) {
-		Node node = head.next;
+		Node node = head;
 		Node tmp_node = node;
 		while(node!=pre_node){
 			tmp_node = node;
@@ -88,7 +92,20 @@ public class SingleLinkedList {
 		return tmp_node;
 	}
 	
+	
+	public boolean empty() {
+		if(head.next == null) {
+			System.out.println("Linked List is empty");
+			return true;	
+		}else {
+			return false;
+		}
+	}
+	
 	public void show() {
+		if(empty()) {
+			return;
+		}
 		System.out.print("[head]->");
 		if(head.next == null) {
 			System.out.println();
@@ -106,7 +123,7 @@ public class SingleLinkedList {
 	}
 	
 	private Node set_tail() {
-		Node node = head.next;
+		Node node = head;
 		Node tmp_node = null;
 		while(node.next !=null) {
 			tmp_node = node;
@@ -116,4 +133,7 @@ public class SingleLinkedList {
 		tail = node;
 		return tmp_node;
 	}
+	
+	
+	
 }

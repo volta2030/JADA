@@ -1,6 +1,14 @@
 package jada;
 
-
+/**
+ * DOUBLY LINKED LIST
+ * 
+ * JADA : JAVA Data structure & Algorithm
+ * Makes World Better with Engineering - volta2030(GT40)
+ * Recent Update : 2021-08-29 
+ * 
+ * 
+ */
 import jada.*;
 
 public class DoubleLinkedList {
@@ -40,9 +48,13 @@ public class DoubleLinkedList {
 	}
 	
 	public void remove(Node pre_node) {
-		
-		if(pre_node.data == null) { //head has null data
+
+		if(pre_node.next == null) { //head has null data
 			System.out.println("Couldn't remove head");
+			return;
+		}
+		
+		if(empty()) {
 			return;
 		}
 		
@@ -73,7 +85,19 @@ public class DoubleLinkedList {
 		return node;
 	}
 	
+	public boolean empty() {
+		if(head.next == null) {
+			System.out.println("Linked List is empty");
+			return true;	
+		}else {
+			return false;
+		}
+	}
+	
 	public void show() {
+		if(empty()) {
+			return;
+		}
 		System.out.print("[head]<->");
 		if(head.next == null) {
 			System.out.println();
