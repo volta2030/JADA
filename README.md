@@ -12,3 +12,4 @@ This library was created to study & utilize of Data Structures
 - Stack
 - Singly Linked List
 - Doubly Linked List
+- Deque
