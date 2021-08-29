@@ -10,11 +10,11 @@ package test;
 */
 import jada.*;
 
-public class SingleLinkedListTest {
+public class SinglyLinkedListTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			SingleLinkedList ds = new SingleLinkedList();
+			SLinkList ds = new SLinkList();
 			ds.show();
 			ds.insert(ds.target_node(ds.head,0), 1);
 			ds.insert(ds.target_node(ds.head,0), 2);

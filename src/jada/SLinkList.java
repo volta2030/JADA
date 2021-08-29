@@ -1,22 +1,23 @@
 package jada;
-
 /**
- * DOUBLY LINKED LIST
+ * SINGLY LINKED LIST
  * 
  * JADA : JAVA Data structure & Algorithm
  * Makes World Better with Engineering - volta2030(GT40)
- * Recent Update : 2021-08-29 
+ * Recent Update : 2021-08-29
  * 
  * 
  */
+
 import jada.*;
 
-public class DoubleLinkedList {
+public class SLinkList {
+	
 	
 	public Node head;
 	public Node tail;
 	
-	public DoubleLinkedList() {
+	public SLinkList() {
 		super();
 		head = new Node();
 	}
@@ -28,33 +29,29 @@ public class DoubleLinkedList {
 		if(pre_node.data==null) { //head has null data
 			Node tmp_node = head.next;
 			head.next = node;
-			node.prev = head;
 			if(tmp_node!=null) {
-				node.next = tmp_node;
-				tmp_node.prev = node;
+				node.next = tmp_node;	
 			}
-			tmp_node = null;
+			
 			set_tail();
 			return;
 		}
 
 		Node tmp_node = pre_node.next;
 		pre_node.next = node;
-		node.prev = pre_node.prev;
 		node.next = tmp_node;
-		tmp_node.prev = node;
 		tmp_node = null;
 		set_tail();
 	}
-	
+	//ERROR
 	public void remove(Node pre_node) {
-
-		if(pre_node.next == null) { //head has null data
-			System.out.println("Couldn't remove head");
+		
+		if(empty()) { //head has null data
 			return;
 		}
 		
-		if(empty()) {
+		if(pre_node.data == null) { 
+			System.out.println("Couldn't remove head");
 			return;
 		}
 		
@@ -69,7 +66,6 @@ public class DoubleLinkedList {
 		}
 		
 		node.next = tmp_node;
-		tmp_node.prev = node;
 		tmp_node = null;
 		set_tail();
 		return;
@@ -85,6 +81,18 @@ public class DoubleLinkedList {
 		return node;
 	}
 	
+	private Node before_remove(Node pre_node) {
+		Node node = head;
+		Node tmp_node = node;
+		while(node!=pre_node){
+			tmp_node = node;
+			node = tmp_node.next;	
+		}
+		node = null;
+		return tmp_node;
+	}
+	
+	
 	public boolean empty() {
 		if(head.next == null) {
 			System.out.println("Linked List is empty");
@@ -98,7 +106,7 @@ public class DoubleLinkedList {
 		if(empty()) {
 			return;
 		}
-		System.out.print("[head]<->");
+		System.out.print("[head]->");
 		if(head.next == null) {
 			System.out.println();
 			return;
@@ -107,7 +115,7 @@ public class DoubleLinkedList {
 		Node tmp_node = null;
 		while(node.next !=null) {
 			tmp_node = node;
-			System.out.print(node.data+"<->");
+			System.out.print(node.data+"->");
 			node = tmp_node.next;
 		}
 		System.out.println(tail.data);
@@ -115,7 +123,7 @@ public class DoubleLinkedList {
 	}
 	
 	private Node set_tail() {
-		Node node = head.next;
+		Node node = head;
 		Node tmp_node = null;
 		while(node.next !=null) {
 			tmp_node = node;
@@ -125,15 +133,7 @@ public class DoubleLinkedList {
 		tail = node;
 		return tmp_node;
 	}
-
-	private Node before_remove(Node pre_node) {
-		Node node = head.next;
-		Node tmp_node = node;
-		while(node!=pre_node){
-			tmp_node = node;
-			node = tmp_node.next;	
-		}
-		node = null;
-		return tmp_node;
-	}
+	
+	
+	
 }

@@ -11,11 +11,11 @@ package test;
 
 import jada.*;
 
-public class DoubleLinkedListTest {
+public class DoublyLinkedListTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		DoubleLinkedList ds = new DoubleLinkedList();
+		DLinkList ds = new DLinkList();
 		ds.insert(ds.head, 1);
 		ds.insert(ds.head, 2);
 		ds.insert(ds.head, 3);

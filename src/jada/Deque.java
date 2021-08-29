@@ -1,6 +1,6 @@
 package jada;
 
-public class Deque extends SingleLinkedList {
+public class Deque extends SLinkList {
 
 	public Deque() {
 		super();

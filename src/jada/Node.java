@@ -15,12 +15,14 @@ public class Node {
 	public Node prev;
 		
 	public Node() {
+		super();
 		this.prev = null;
 		this.data = null;
 		this.next = null;
 	};
 		
 	public Node(Object data) {
+		super();
 		this.prev = null;
 		this.data = data;
 		this.next = null;
